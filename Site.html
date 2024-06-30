@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reserva de Eventos</title>
+    <link rel="stylesheet" href="Site.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="Img/Imagem1.jpg" alt="Logo">
+        <h1>Sistema de Reserva de Eventos</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarPagina('eventos')">Eventos</a></li>
+            <li><a href="#" onclick="mostrarPagina('reservas')">Reservas</a></li>
+            <li><a href="#" onclick="mostrarPagina('cadastrarEvento')">Cadastrar Evento</a></li>
+            <li><a href="#" onclick="mostrarPagina('contato')">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="eventos" class="pagina">
+        <h1>Sobre Nós</h1>
+        <p> Bem-Vindo ao site que disponibilisa todas as informação sobre eventos dosponiveis perto e longe de si</p>
+        <p> Aqui voce pode ver e analizar e fazer a marcação dos eventos que mais se adequam a voce <br> ecolha o seu evento e faça marcação para estares dentro de tudo que acontecem fora e dento da tua localidade, porque nós somos a solução de tudo quanto tem haver com evento</voce></p>
+        
+        <h2>Eventos Disponíveis</h2>
+
+        <div id="eventos-lista" class="grid-container"></div>
+
+
+    </section>
+
+    <section id="reservas" class="pagina">
+        <h2>Minhas Reservas</h2>
+        <div id="reservas-lista"></div>
+    </section>
+
+    <section id="detalhesEvento" class="pagina" data-evento-id="">
+        <h2>Detalhes do Evento</h2>
+        <img id="detalhesImagem" src="" alt="Imagem do Evento">
+        <h3 id="detalhesNome"></h3>
+        <p id="detalhesData"></p>
+        <p id="detalhesHora"></p>
+        <p id="detalhesLocal"></p>
+        <p id="detalhesDescricao"></p>
+        <form onsubmit="fazerReserva(event)">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Reservar</button>
+        </form>
+        <form onsubmit="adicionarComentario(event)">
+            <label for="comentario">Comentário:</label>
+            <textarea id="comentario" name="comentario" required></textarea>
+            <button type="submit">Adicionar Comentário</button>
+        </form>
+        <div id="comentarios-lista"></div>
+        <div class="reacoes">
+            <button onclick="adicionarReacao('Adoro')">🥰</button>
+            <button onclick="adicionarReacao('Gosto')">👍</button>
+            <button onclick="adicionarReacao('Riso')">😂</button>
+            <button onclick="adicionarReacao('Surpresa')">😮</button>
+            <button onclick="adicionarReacao('Nao gostei')">👎</button>
+
+        </div>
+        <button onclick="mostrarPagina('eventos')">Voltar</button>
+    </section>
+
+    <section id="cadastrarEvento" class="pagina">
+
+        <h2>Cadastrar Evento</h2>
+        <form onsubmit="cadastrarEvento(event)">
+            <label for="evento-nome">Nome do Evento:</label>
+            <input type="text" id="evento-nome" name="evento-nome" required>
+            <label for="evento-data">Data:</label>
+            <input type="date" id="evento-data" name="evento-data" required>
+            <label for="evento-hora">Hora:</label>
+            <input type="time" id="evento-hora" name="evento-hora" required>
+            <label for="evento-local">Local:</label>
+            <input type="text" id="evento-local" name="evento-local" required>
+            <label for="evento-descricao">Descrição:</label>
+            <textarea id="evento-descricao" name="evento-descricao" required></textarea>
+            <label for="evento-foto">Foto (URL):</label>
+            <input type="url" id="evento-foto" name="evento-foto" required>
+            <button type="submit">Cadastrar Evento</button>
+        </form>
+    </section>
+
+    <section id="contato" class="pagina">
+        <h2>Contatos</h2>
+        <h4>Entre em contato conosco e seja o primeiro a saber sobre os maiores eventos disponiveis</h4>
+        <p>Email:quetaneves8@gmail.com</p>
+        <p>Telefone: 939792542</p>
+        <p>Email:lngombe34@gmail.com</p>
+        <p>Telefone: 931141004</p>
+        <div class="social-media">
+            <a href="#"><img src="Img/facebook_108044.png" alt="Facebook"></a>
+            <a href="#"><img src="Img/whatsapp_109861.png" alt="WhatsApp"></a>
+            <a href="#"><img src="Img/th.jpeg" alt="Twitter"></a>
+            <a href="#"><img src="Img/telegram_logo_icon_168692.png" alt="Telegram"></a>
+            <a href="#"><img src="Img/g_109859.png" alt="Gmail"></a>
+        </div>
+    </section>
+    <footer>
+
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><img src="Img/facebook_108044.png" alt="Facebook"></a>
+            <a href="https://wa.me" target="_blank"><img src="Img/whatsapp_109861.png" alt="WhatsApp"></a>
+            <a href="https://twitter.com" target="_blank"><img src="Img/th.jpeg" alt="Twitter"></a>
+            <a href="https://telegram.org" target="_blank"><img src="Img/telegram_logo_icon_168692.png" alt="Telegram"></a>
+            <a href="mailto:email@example.com"><img src="Img/g_109859.png" alt="Gmail"></a>
+            </div>
+        <p>&copy; 2024 Sistema de Reserva de Eventos</p>
+    </footer>
+    <script src="Site.js"></script>
+
+
+</body>
+
+</html>
